@@ -1,0 +1,15 @@
+<p>
+  new-in-out works!
+</p>
+<form [formGroup]="ticketForm">
+    <div>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    
+    <div style="margin-bottom: 1rem;"><button mat-raised-button color="primary" id="btnIn">New arrival</button></div>
+    <div><button mat-raised-button color="primary" id="btnOut">New dispatch</button></div>
+</form>
