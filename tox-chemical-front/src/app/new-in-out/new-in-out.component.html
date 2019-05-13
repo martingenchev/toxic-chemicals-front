@@ -1,15 +1,19 @@
-<p>
-  new-in-out works!
-</p>
-<form [formGroup]="ticketForm">
-    <div>
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date" required>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-    </div>
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
     
-    <div style="margin-bottom: 1rem;"><button mat-raised-button color="primary" id="btnIn">New arrival</button></div>
-    <div><button mat-raised-button color="primary" id="btnOut">New dispatch</button></div>
+    <div>
+        <label>New: </label>
+            <mat-radio-group formControlName="inOut">
+                <mat-radio-button value="0" style="margin: 0 12px;">Arrival</mat-radio-button>
+                <mat-radio-button value="1">Dispatch</mat-radio-button>
+            </mat-radio-group> 
+    </div>
+    <div>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    
+    <div style="margin-bottom: 1rem;"><button mat-raised-button color="primary">Next step</button></div>
 </form>

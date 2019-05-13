@@ -29,4 +29,8 @@ export class AvailabilityComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(){
+    console.log("chemicalEntryForm", this.chemicalEntryForm.value);
+  }
+
 }

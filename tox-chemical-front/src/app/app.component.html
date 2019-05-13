@@ -1,3 +1,15 @@
-<app-new-in-out></app-new-in-out>
-<app-availability></app-availability>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <span>Toxic Chemicals</span>
+    <button mat-button routerLink="/logout">Log out</button>
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <span>User 1</span>
+  </mat-toolbar>
+<mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card>
+            <router-outlet></router-outlet>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+

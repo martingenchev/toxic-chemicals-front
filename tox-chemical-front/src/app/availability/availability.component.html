@@ -1,7 +1,4 @@
-<p>
-  availability works!
-</p>
-<form [formGroup]="chemicalEntryForm">
+<form [formGroup]="chemicalEntryForm" (ngSubmit)="onSubmit()">
   
   <div>
   <!-- type -->
@@ -19,8 +16,8 @@
 
     <mat-form-field>
       <input matInput type="number" placeholder="Quantity" formControlName="quantity" required>
+      <span matSuffix>K</span>
     </mat-form-field>
-    <span>K</span>
   </div>
 
   <button mat-raised-button color="primary">Check Availability</button>
