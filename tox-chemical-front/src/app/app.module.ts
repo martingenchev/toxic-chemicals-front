@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { LoginService } from './services/login.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +16,7 @@ import { AvailabilityComponent } from './availability/availability.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GateComponent } from './gate/gate.component';
 import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AuthGuard } from './auth.guard';
     NewInOutComponent,
     AvailabilityComponent,
     PageNotFoundComponent,
-    GateComponent
+    GateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { AuthGuard } from './auth.guard';
     BrowserAnimationsModule,
     MatRadioModule, MatFormFieldModule, MatInputModule, MatDividerModule, MatCardModule, MatSnackBarModule, MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
   ],
-  providers: [AuthGuard],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

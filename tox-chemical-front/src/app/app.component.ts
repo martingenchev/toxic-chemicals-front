@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginService } from './services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Toxic Chemicals';
+
+  constructor(private loginService: LoginService, private router: Router){}
+
+  logout(){
+    this.loginService.isLoggedIn = false;
+    this.router.navigate(['/login']);
+  }
 }
