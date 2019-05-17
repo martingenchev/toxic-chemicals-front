@@ -12,12 +12,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewInOutComponent } from './new-in-out/new-in-out.component';
 import { AvailabilityComponent } from './availability/availability.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GateComponent } from './gate/gate.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewInOutComponent,
-    AvailabilityComponent
+    AvailabilityComponent,
+    PageNotFoundComponent,
+    GateComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { AvailabilityComponent } from './availability/availability.component';
     BrowserAnimationsModule,
     MatRadioModule, MatFormFieldModule, MatInputModule, MatDividerModule, MatCardModule, MatSnackBarModule, MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

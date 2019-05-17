@@ -20,7 +20,7 @@ export class NewInOutComponent implements OnInit {
   onSubmit(){
     console.log("ticketForm", this.ticketForm.value);
     if (this.ticketForm.valid) {
-      this.router.navigate(['/availability']);
+      this.router.navigate(['/gate/availability']);
     }
   }
 
