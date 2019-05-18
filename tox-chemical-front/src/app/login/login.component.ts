@@ -22,10 +22,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("chemicalEntryForm", this.loginForm.value);
+    ///console.log("loginForm", this.loginForm.value);
     if (this.loginForm.valid) {
       this.loginService.isLoggedIn = true;
-      this.router.navigate(['/gate']);
+      
+      if(this.loginForm.value.username === "gate"){
+        this.router.navigate(['gate']);
+      }else if(this.loginForm.value.username === "wh1"){
+        this.router.navigate(['wh1']);
+      }else{
+        this.router.navigate(['login']);
+      }
+      
     }
   }
 

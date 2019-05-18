@@ -6,17 +6,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule, MatDividerModule, MatCardModule, MatSnackBarModule, MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatGridListModule, MatNativeDateModule } from '@angular/material';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatSelectModule} from '@angular/material/select';
+import { MatRadioModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewInOutComponent } from './new-in-out/new-in-out.component';
-import { AvailabilityComponent } from './availability/availability.component';
+import { NewInOutComponent } from './gate/new-in-out/new-in-out.component';
+import { AvailabilityComponent } from './gate/availability/availability.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GateComponent } from './gate/gate.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { Wh1Component } from './warehouse/wh1/wh1.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +24,15 @@ import { LoginComponent } from './login/login.component';
     AvailabilityComponent,
     PageNotFoundComponent,
     GateComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    Wh1Component
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatRadioModule, MatFormFieldModule, MatInputModule, MatDividerModule, MatCardModule, MatSnackBarModule, MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
+    MatRadioModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
   ],
   providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
