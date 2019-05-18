@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Toxic Chemicals';
+  title = 'Toxic Chemical';
 
   constructor(private loginService: LoginService, private router: Router){}
 

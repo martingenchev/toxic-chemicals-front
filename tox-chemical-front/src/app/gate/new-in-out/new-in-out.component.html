@@ -1,10 +1,13 @@
+<h1 class="mat-headline">New</h1>
+
+<mat-card>
 <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
     
     <div>
-        <label>New: </label>
             <mat-radio-group formControlName="inOut">
-                <mat-radio-button value="0" style="margin: 0 12px;">Arrival</mat-radio-button>
-                <mat-radio-button value="1">Dispatch</mat-radio-button>
+                <mat-radio-button *ngFor="let type of types" [value]="type.value" style="margin-right: 12px;">
+                    {{type.viewValue}}
+                </mat-radio-button>
             </mat-radio-group> 
     </div>
     <div>
@@ -13,7 +16,8 @@
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-        </div>
-    
-    <div style="margin-bottom: 1rem;"><button mat-raised-button color="primary">Proceed to details</button></div>
+    </div>
+
+    <button mat-raised-button color="primary">Proceed to details</button>
 </form>
+</mat-card>

@@ -1,24 +1,28 @@
-<form [formGroup]="chemicalEntryForm" (ngSubmit)="onSubmit()">
+<h1 class="mat-headline">New &#8250; {{ stepOne }}</h1>
+
+<mat-card>
+  <form [formGroup]="chemicalEntryForm" (ngSubmit)="onSubmit()">
   
-  <div>
-  <!-- type -->
+    <div>
+    <!-- type -->
+    
+        <mat-form-field style="margin-right: 2rem;">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type" required>
+              <mat-option *ngFor="let type of types" [value]="type.value">
+                {{type.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
   
-      <mat-form-field style="margin-right: 2rem;">
-          <mat-label>Type</mat-label>
-          <mat-select formControlName="type" required>
-            <mat-option *ngFor="let type of types" [value]="type.value">
-              {{type.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-  <!-- quantity -->
-
-    <mat-form-field>
-      <input matInput type="number" placeholder="Quantity" formControlName="quantity" required>
-      <span matSuffix>K</span>
-    </mat-form-field>
-  </div>
-
-  <button mat-raised-button color="primary">Check Availability</button>
-</form>
+    <!-- quantity -->
+  
+      <mat-form-field>
+        <input matInput type="number" placeholder="Quantity" formControlName="quantity" required>
+        <span matSuffix>K</span>
+      </mat-form-field>
+    </div>
+  
+    <button mat-raised-button color="primary">Check Availability</button>
+  </form>
+</mat-card>

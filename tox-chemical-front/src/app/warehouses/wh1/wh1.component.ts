@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wh1.component.css']
 })
 export class Wh1Component implements OnInit {
-  title = 'Warehouse 1';
+  title: string = 'Warehouse 1';
   constructor() { }
 
   ngOnInit() {

@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
-    <span>Toxic Chemical</span>
+    <span>{{ title }}</span>
     <button mat-button (click)="logout()">Log out</button> 
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
-    <span>User 1</span>
+    <span>{{ this.loginService.user }}</span>
   </mat-toolbar>
 <mat-grid-list cols="1" rowHeight="2:1">
     <mat-grid-tile>
-        <mat-card>
+
             <router-outlet></router-outlet>
-        </mat-card>
+
     </mat-grid-tile>
 </mat-grid-list>
 
