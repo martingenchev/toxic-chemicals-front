@@ -18,26 +18,24 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
-    console.log("isLoggedIn", this.loginService.isLoggedIn);
+    console.log('isLoggedIn', this.loginService.isLoggedIn);
   }
 
-  onSubmit(){
-    ///console.log("loginForm", this.loginForm.value);
+  onSubmit() {
+    /// console.log("loginForm", this.loginForm.value);
     if (this.loginForm.valid) {
       this.loginService.isLoggedIn = true;
       this.loginService.user = this.loginForm.value.username;
-      console.log("user", this.loginService.user);
-      
-      if(this.loginService.user === "gate"){
+      console.log('user', this.loginService.user);
+
+      if (this.loginService.user === 'gate') {
         this.router.navigate(['gate']);
-      }else if(this.loginService.user === "wh1"){
-        this.router.navigate(['wh1']);
-      }else if(this.loginService.user === "wh2"){
-        this.router.navigate(['wh2']);
-      }else{
+      } else if (this.loginService.user === 'wh1') {
+        this.router.navigate(['warehouse']);
+      }  else {
         this.router.navigate(['login']);
       }
-      
+
     }
   }
 

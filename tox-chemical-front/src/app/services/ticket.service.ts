@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class TicketService {
+  constructor() { }
+
+
   ticket = {
     date: '',
     inOut: 0,
@@ -12,5 +14,5 @@ export class TicketService {
     warehouse: 1
   };
 
-  constructor() { }
+
 }

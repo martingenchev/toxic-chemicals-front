@@ -7,15 +7,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './guards/auth.guard';
 import { WarehouseGuard } from './guards/warehouse.guard';
 import { LoginComponent } from './login/login.component';
-import { Wh1Component } from './warehouses/wh1/wh1.component';
-import { Wh2Component } from './warehouses/wh2/wh2.component';
 import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
+import {WarehouseComponent} from './warehouse/warehouse.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', 
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -23,7 +22,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'gate', 
+    path: 'gate',
     component: GateComponent,
     canActivate: [AuthGuard],
     children: [
@@ -42,16 +41,12 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'wh1', 
-  component: Wh1Component,
+  { path: 'warehouse',
+  component: WarehouseComponent,
   canActivate: [WarehouseGuard]
   },
 
-  { path: 'wh2', 
-  component: Wh2Component,
-  canActivate: [WarehouseGuard]
-  },
-  
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
