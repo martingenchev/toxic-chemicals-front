@@ -8,4 +8,12 @@ export class LoginService {
   user: string = '';
 
   constructor() { }
+
+  login(){
+    this.isLoggedIn=true;
+  }
+
+  logout(){
+    this.isLoggedIn=false;
+  }
 }

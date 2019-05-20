@@ -4,13 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TicketService {
-  ticket = {
-    date: '',
-    inOut: 0,
-    type: 0,
-    quantity: 0,
-    warehouse: 1
-  };
+    date: Date;
+    inOut: number;
+    type: number;
+    quantity: number;
+    warehouse: number;
 
   constructor() { }
 }

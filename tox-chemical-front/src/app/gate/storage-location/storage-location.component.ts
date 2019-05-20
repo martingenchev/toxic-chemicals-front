@@ -9,27 +9,37 @@ import { TicketService } from '../../services/ticket.service';
 })
 export class StorageLocationComponent implements OnInit {
   stepOne: string = '';
+  quantity: number;
   type: string = '';
   direction: string ='';
+  warehouse: number;
 
   constructor(private ticketService: TicketService) { }
 
   ngOnInit() {
-    if(this.ticketService.ticket.inOut === 0){
+    if(this.ticketService.inOut === 0){
       this.stepOne="Arrival";
       this.direction="TO";
-    } else if (this.ticketService.ticket.inOut === 1){
+    } else if (this.ticketService.inOut === 1){
       this.stepOne="Dispatch";
       this.direction="FROM";
     }
 
-    if(this.ticketService.ticket.type === 0){
+    this.quantity=this.ticketService.quantity;
+
+    if(this.ticketService.type === 0){
       this.type="A";
-    } else if (this.ticketService.ticket.type === 1){
+    } else if (this.ticketService.type === 1){
       this.type="B";
-    } else if (this.ticketService.ticket.type === 2){
+    } else if (this.ticketService.type === 2){
       this.type="C";
     }
+
+    this.warehouse=this.ticketService.warehouse;
+  }
+
+  ticketbtn(){
+    console.log("btn clicked");
   }
 
 }

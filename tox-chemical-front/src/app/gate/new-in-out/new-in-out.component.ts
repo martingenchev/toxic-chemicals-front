@@ -32,8 +32,8 @@ export class NewInOutComponent implements OnInit {
   onSubmit(){
     //console.log("ticketForm", this.ticketForm.value);
     if (this.ticketForm.valid) {
-      this.ticketService.ticket.date = this.ticketForm.value.date;
-      this.ticketService.ticket.inOut = this.ticketForm.value.inOut;
+      this.ticketService.date = this.ticketForm.value.date;
+      this.ticketService.inOut = this.ticketForm.value.inOut;
 
       //console.log("ticketService", this.ticketService.ticket);
       this.router.navigate(['/gate/availability']);

@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     ///console.log("loginForm", this.loginForm.value);
     if (this.loginForm.valid) {
-      this.loginService.isLoggedIn = true;
+      this.loginService.login();
       this.loginService.user = this.loginForm.value.username;
+      console.log("isLoggedIn", this.loginService.isLoggedIn);
       console.log("user", this.loginService.user);
       
       if(this.loginService.user === "gate"){
