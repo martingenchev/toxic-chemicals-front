@@ -1,6 +1,9 @@
-<h1 class="mat-headline">New &#8250; {{ stepOne }} &#8250; Storage Location</h1>
+<h1 class="mat-headline">New &#8250; {{ stepOne | inOut: true }} &#8250; Storage Location</h1>
 
 <mat-card>
-<p>{{ quantity }}K of chemical {{ type }} <span class="mat-body-2" style="margin: auto 20px;">{{ direction }}</span> Warehouse {{ warehouse }}</p>
+<p *ngFor="let entry of entries">
+    {{ entry.quantity }}K of chemical {{ entry.type | type }} 
+    <span class="mat-body-2" style="margin: auto 20px;">{{ stepOne | inOut: false }}</span> 
+    Warehouse 1</p>
 <button mat-raised-button color="primary" (click)="ticketbtn()">Generate ticket</button>
 </mat-card>

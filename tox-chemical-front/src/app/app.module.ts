@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewInOutComponent } from './gate/new-in-out/new-in-out.component';
 import { AvailabilityComponent } from './gate/availability/availability.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GateComponent } from './gate/gate.component';
@@ -20,19 +19,22 @@ import { LoginComponent } from './login/login.component';
 import { Wh1Component } from './warehouses/wh1/wh1.component';
 import { Wh2Component } from './warehouses/wh2/wh2.component';
 import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
+import { TypePipe } from './pipes/type.pipe';
+import { InOutPipe } from './pipes/in-out.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewInOutComponent,
     AvailabilityComponent,
     PageNotFoundComponent,
     GateComponent,
     LoginComponent,
     Wh1Component,
     Wh2Component,
-    StorageLocationComponent
-    ],
+    StorageLocationComponent,
+    TypePipe,
+    InOutPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

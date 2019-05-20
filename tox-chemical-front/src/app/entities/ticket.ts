@@ -1,8 +1,7 @@
 export class Ticket {
-    id: string;
     date: Date;
     inOut: number;
-    entries: Entry[];
+    entries: Entry[] = [];
 }
 
 export class Entry{

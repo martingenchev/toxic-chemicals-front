@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { TicketService } from '../../services/ticket.service';
+
+export interface Direction {
+  value: number;
+  viewValue: string;
+}
 
 export interface Type {
   value: number;
@@ -15,16 +20,14 @@ export interface Type {
 })
 
 export class AvailabilityComponent implements OnInit {
-  stepOne: string = '';
-  aChemicals=[];
 
+  chemicalEntryForm: FormGroup;
   chemicals: FormArray;
-  
-  chemicalEntryForm = this.fb.group({
-    type: ['', Validators.required],
-    quantity: ['', Validators.required],
-    chemicals: this.fb.array([ this.createItem() ])
-  });
+
+  directions: Direction[] = [
+    {value: 0, viewValue: 'Arrival'},
+    {value: 1, viewValue: 'Dispatch'}
+  ];
 
   types: Type[] = [
     {value: 0, viewValue: 'A'},
@@ -35,39 +38,33 @@ export class AvailabilityComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private ticketService: TicketService) { }
 
   ngOnInit() {
-    if(this.ticketService.inOut === 0){
-      this.stepOne="Arrival";
-    } else if (this.ticketService.inOut === 1){
-      this.stepOne="Dispatch";
-    }
+    this.chemicalEntryForm = this.fb.group({
+      inOut: ['', Validators.required],
+      chemicals: this.fb.array([ this.createItem() ])
+    });
+
+    this.chemicals = this.chemicalEntryForm.get('chemicals') as FormArray;
   }
 
-  createItem(){
+  createItem(): FormGroup{
     return this.fb.group({
       type: ['', Validators.required],
-      quantity: ['', Validators.required],
+      quantity: ['', Validators.required]
     });
   }
-
-  addChemical(){
-    console.log('adding chemical...', this.chemicalEntryForm.value);
-    //this.aChemicals.push(this.chemicalEntryForm.value);
-    //console.log('array', this.aChemicals);
-  }
   addItem(): void {
-    this.chemicals = this.chemicalEntryForm.get('chemicals') as FormArray;
     this.chemicals.push(this.createItem());
   }
 
-  removeChemical(){
-    console.log('removing chemical...');
+  removeItem(): void{
+    this.chemicals.removeAt(this.chemicals.length-1);
   }
 
   onSubmit(){
+
     if (this.chemicalEntryForm.valid){
-      this.ticketService.type = this.chemicalEntryForm.value.type;
-      this.ticketService.quantity = this.chemicalEntryForm.value.quantity;
-      this.ticketService.warehouse = 1;
+      this.ticketService.varTicket.inOut = this.chemicalEntryForm.value.inOut;
+      this.ticketService.varTicket.entries = this.chemicals.value;
       console.log("ticket", this.ticketService);
 
       this.router.navigate(['/gate/location']);
