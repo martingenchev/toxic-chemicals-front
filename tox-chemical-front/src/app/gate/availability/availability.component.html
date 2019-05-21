@@ -1,7 +1,7 @@
 <h1 class="mat-headline">New</h1>
 
 <mat-card>
-  <form [formGroup]="chemicalEntryForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
   
       <div class="radiobtns">
           <mat-radio-group formControlName="inOut">
@@ -12,7 +12,7 @@
   </div>
 
     <div formArrayName="chemicals"
-  *ngFor="let chemical of chemicalEntryForm.get('chemicals').controls; let i = index;">
+  *ngFor="let chemical of ticketForm.get('chemicals').controls; let i = index;">
   <div [formGroupName]="i">
 
     <mat-form-field style="margin-right: 2rem;">

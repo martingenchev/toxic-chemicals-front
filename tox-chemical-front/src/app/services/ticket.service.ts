@@ -9,6 +9,5 @@ export class TicketService {
     varTicket: Ticket= new Ticket();
 
   constructor() { }
-
-  
+ 
 }

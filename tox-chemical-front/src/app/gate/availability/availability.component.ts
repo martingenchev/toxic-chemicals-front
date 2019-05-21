@@ -21,7 +21,7 @@ export interface Type {
 
 export class AvailabilityComponent implements OnInit {
 
-  chemicalEntryForm: FormGroup;
+  ticketForm: FormGroup;
   chemicals: FormArray;
 
   directions: Direction[] = [
@@ -38,12 +38,12 @@ export class AvailabilityComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private ticketService: TicketService) { }
 
   ngOnInit() {
-    this.chemicalEntryForm = this.fb.group({
+    this.ticketForm = this.fb.group({
       inOut: ['', Validators.required],
       chemicals: this.fb.array([ this.createItem() ])
     });
 
-    this.chemicals = this.chemicalEntryForm.get('chemicals') as FormArray;
+    this.chemicals = this.ticketForm.get('chemicals') as FormArray;
   }
 
   createItem(): FormGroup{
@@ -62,8 +62,8 @@ export class AvailabilityComponent implements OnInit {
 
   onSubmit(){
 
-    if (this.chemicalEntryForm.valid){
-      this.ticketService.varTicket.inOut = this.chemicalEntryForm.value.inOut;
+    if (this.ticketForm.valid){
+      this.ticketService.varTicket.inOut = this.ticketForm.value.inOut;
       this.ticketService.varTicket.entries = this.chemicals.value;
       console.log("ticket", this.ticketService);
 
