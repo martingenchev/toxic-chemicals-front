@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, by, element } from 'protractor';
+import { browser, logging, by, element } from 'protractor';
 
 
 describe('workspace-project App', () => {
@@ -9,22 +9,38 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  // it('should display welcome message', () => {
-  //   page.navigateTo();
-  //   expect(page.getParagraphText()).toEqual('Welcome to tox-chemical-front!');
-  // });
-
 it('should go to gate', () => {
-page.navigateTo();
-    
-page.getByFormControlName('username').sendKeys('gate');
-// browser.sleep(1000);
-page.getByFormControlName('password').sendKeys('whatever');
-// browser.sleep(1000);
-element(by.id('btnUserlogin')).click();
-// browser.sleep(1000);
-expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate');
-// browser.sleep(1000);
+  page.gateLogin();
+  expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate');
+});
+
+it('should display New as h1', () => {
+  page.gateLogin();
+  expect(page.getParagraphText()).toEqual('New');
+ });
+
+it('should make a ticket', () => {
+  page.gateLogin();
+  // browser.sleep(1000);
+  element.all(by.tagName('mat-radio-button')).get(1).click();
+  // browser.sleep(1000);
+  element.all(by.tagName('mat-select')).click();
+  // browser.sleep(1000);
+  element.all(by.tagName('mat-option')).get(1).click();
+  // browser.sleep(1000);
+  page.getByFormControlName('quantity').sendKeys(89);
+  // browser.sleep(1000);
+  element.all(by.tagName('button')).get(3).click();
+  // browser.sleep(1000);
+  expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate/location');
+});
+
+afterEach(async () => {
+  // Assert that there are no errors emitted from the browser
+  const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+  expect(logs).not.toContain(jasmine.objectContaining({
+    level: logging.Level.SEVERE,
+  } as logging.Entry));
 });
 
 });
