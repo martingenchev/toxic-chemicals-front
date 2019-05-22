@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private loginService: LoginService, private router: Router){}
 
   logout(){
-    this.loginService.isLoggedIn = false;
+    this.loginService.logout();
     this.router.navigate(['/login']);
   }
 }

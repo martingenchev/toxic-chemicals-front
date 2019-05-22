@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Ticket } from '../entities/ticket';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TicketService {
+
+    varTicket: Ticket= new Ticket();
+
   constructor() { }
-
-
-  ticket = {
-    date: '',
-    inOut: 0,
-    type: 0,
-    quantity: 0,
-    warehouse: 1
-  };
-
 
 }
