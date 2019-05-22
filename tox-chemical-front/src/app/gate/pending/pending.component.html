@@ -1,0 +1,9 @@
+<h1 class="mat-headline">
+  Pending tickets
+</h1>
+<div *ngFor="let ticket of tickets">
+  <app-tickets
+    [ticketInput]="ticket"
+    (ticketClicked)="onTicketClicked($event)">
+  </app-tickets>
+ </div>

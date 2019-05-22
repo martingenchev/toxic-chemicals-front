@@ -21,6 +21,8 @@ import { Wh2Component } from './warehouses/wh2/wh2.component';
 import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
 import { TypePipe } from './pipes/type.pipe';
 import { InOutPipe } from './pipes/in-out.pipe';
+import { PendingComponent } from './gate/pending/pending.component';
+import { TicketsComponent } from './gate/pending/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { InOutPipe } from './pipes/in-out.pipe';
     Wh2Component,
     StorageLocationComponent,
     TypePipe,
-    InOutPipe
+    InOutPipe,
+    PendingComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,

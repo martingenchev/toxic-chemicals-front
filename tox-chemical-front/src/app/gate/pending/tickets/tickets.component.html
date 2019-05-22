@@ -1,0 +1,7 @@
+<mat-card (click)="onTicketClick(ticketInput)">
+  <p class="mat-body-2">{{ticketInput.inOut | inOut: true}}</p>
+  <p *ngFor="let entry of ticketInput.entries">
+    {{ entry.quantity }}K of chemical {{ entry.type | type }} 
+    <span class="mat-body-2" style="margin: auto 20px;">{{ ticketInput.inOut | inOut: false }}</span> 
+    {{ entry.warehouse }}</p>
+</mat-card>
