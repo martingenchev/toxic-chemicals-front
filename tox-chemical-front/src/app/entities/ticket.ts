@@ -4,7 +4,7 @@ export class Ticket {
 }
 
 export class Entry{
-    type: number;
+    type: string;
     quantity: number;
-    warehouse: number;
+    warehouse_id: number;
 }
