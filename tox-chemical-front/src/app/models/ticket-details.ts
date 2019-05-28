@@ -6,4 +6,6 @@ export class ticketDetails {
   date: string ;
 }
 
-export const tickets: ticketDetails[] = [];
+export class Incometickets {
+  tickets: ticketDetails[];
+}

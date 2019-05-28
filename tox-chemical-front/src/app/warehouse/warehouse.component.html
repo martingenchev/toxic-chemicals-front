@@ -23,9 +23,18 @@
     <!--<span></span>-->
   <!--</div>-->
 
-    <input  (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <!--<input   [formControl]="idFilter" placeholder="Filter">-->
   <mat-card>
-  <mat-table  [dataSource]="ActiveIncomeTicket" class="mat-elevation-z8">
+  <mat-select [formControl]="idFilter" placeholder="Select Warehouse">
+    <mat-option  [value]="1">1 </mat-option>
+    <mat-option  [value]="2">2 </mat-option>
+    <mat-option  [value]="3">3 </mat-option>
+    <mat-option  [value]="4">4 </mat-option>
+    <mat-option  [value]="5">5 </mat-option>
+  </mat-select>
+  </mat-card>
+  <mat-card>
+  <mat-table  [dataSource]="dataSources" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->

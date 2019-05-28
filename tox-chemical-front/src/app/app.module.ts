@@ -22,6 +22,7 @@ import {WarehouseService} from './services/warehouse.service';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { TypePipe } from './pipes/type.pipe';
 import { InOutPipe } from './pipes/in-out.pipe';
+import { WarehouseInventoryComponent } from './warehouse-inventory/warehouse-inventory.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InOutPipe } from './pipes/in-out.pipe';
     StorageLocationComponent,
     WarehouseComponent,
     TypePipe,
-    InOutPipe
+    InOutPipe,
+    WarehouseInventoryComponent
     ],
   imports: [
     BrowserModule,
