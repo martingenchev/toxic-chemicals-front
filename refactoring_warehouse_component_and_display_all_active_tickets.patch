@@ -1,0 +1,441 @@
+Index: tox-chemical-front/src/app/warehouses/wh1/wh1.component.css
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh1/wh1.component.css	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh1/wh1.component.css	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,0 +0,0 @@
+Index: tox-chemical-front/src/app/warehouses/wh1/wh1.component.html
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh1/wh1.component.html	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh1/wh1.component.html	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,3 +0,0 @@
+-<p class="mat-headline">
+-  {{title}}
+-</p>
+Index: tox-chemical-front/src/app/warehouses/wh1/wh1.component.spec.ts
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh1/wh1.component.spec.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh1/wh1.component.spec.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,25 +0,0 @@
+-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+-
+-import { Wh1Component } from './wh1.component';
+-
+-describe('Wh1Component', () => {
+-  let component: Wh1Component;
+-  let fixture: ComponentFixture<Wh1Component>;
+-
+-  beforeEach(async(() => {
+-    TestBed.configureTestingModule({
+-      declarations: [ Wh1Component ]
+-    })
+-    .compileComponents();
+-  }));
+-
+-  beforeEach(() => {
+-    fixture = TestBed.createComponent(Wh1Component);
+-    component = fixture.componentInstance;
+-    fixture.detectChanges();
+-  });
+-
+-  it('should create', () => {
+-    expect(component).toBeTruthy();
+-  });
+-});
+Index: tox-chemical-front/src/app/warehouses/wh1/wh1.component.ts
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh1/wh1.component.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh1/wh1.component.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,15 +0,0 @@
+-import { Component, OnInit } from '@angular/core';
+-
+-@Component({
+-  selector: 'app-wh1',
+-  templateUrl: './wh1.component.html',
+-  styleUrls: ['./wh1.component.css']
+-})
+-export class Wh1Component implements OnInit {
+-  title: string = 'Warehouse 1';
+-  constructor() { }
+-
+-  ngOnInit() {
+-  }
+-
+-}
+Index: tox-chemical-front/src/app/warehouses/wh2/wh2.component.css
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh2/wh2.component.css	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh2/wh2.component.css	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,0 +0,0 @@
+Index: tox-chemical-front/src/app/warehouses/wh2/wh2.component.html
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh2/wh2.component.html	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh2/wh2.component.html	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,3 +0,0 @@
+-<p class="mat-headline">
+-  {{title}}
+-</p>
+\ No newline at end of file
+Index: tox-chemical-front/src/app/warehouses/wh2/wh2.component.spec.ts
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh2/wh2.component.spec.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh2/wh2.component.spec.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,25 +0,0 @@
+-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+-
+-import { Wh2Component } from './wh2.component';
+-
+-describe('Wh2Component', () => {
+-  let component: Wh2Component;
+-  let fixture: ComponentFixture<Wh2Component>;
+-
+-  beforeEach(async(() => {
+-    TestBed.configureTestingModule({
+-      declarations: [ Wh2Component ]
+-    })
+-    .compileComponents();
+-  }));
+-
+-  beforeEach(() => {
+-    fixture = TestBed.createComponent(Wh2Component);
+-    component = fixture.componentInstance;
+-    fixture.detectChanges();
+-  });
+-
+-  it('should create', () => {
+-    expect(component).toBeTruthy();
+-  });
+-});
+Index: tox-chemical-front/src/app/warehouses/wh2/wh2.component.ts
+===================================================================
+--- tox-chemical-front/src/app/warehouses/wh2/wh2.component.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/warehouses/wh2/wh2.component.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
+@@ -1,16 +0,0 @@
+-import { Component, OnInit } from '@angular/core';
+-
+-@Component({
+-  selector: 'app-wh2',
+-  templateUrl: './wh2.component.html',
+-  styleUrls: ['./wh2.component.css']
+-})
+-export class Wh2Component implements OnInit {
+-  title: string = 'Warehouse 2';
+-
+-  constructor() { }
+-
+-  ngOnInit() {
+-  }
+-
+-}
+Index: tox-chemical-front/angular.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/angular.json	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/angular.json	(date 1558384911780)
+@@ -23,7 +23,8 @@
+               "src/assets"
+             ],
+             "styles": [
+-              "src/styles.css"
++              "src/styles.css",
++              "node_modules/bootstrap/dist/css/bootstrap.css"
+             ],
+             "scripts": []
+           },
+@@ -132,4 +133,4 @@
+     }
+   },
+   "defaultProject": "tox-chemical-front"
+-}
+\ No newline at end of file
++}
+Index: tox-chemical-front/src/app/services/ticket.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/services/ticket.service.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/services/ticket.service.ts	(date 1558359558686)
+@@ -1,9 +1,11 @@
+ import { Injectable } from '@angular/core';
+ 
+-@Injectable({
+-  providedIn: 'root'
+-})
++
++@Injectable()
+ export class TicketService {
++  constructor() { }
++
++
+   ticket = {
+     date: '',
+     inOut: 0,
+@@ -12,5 +14,5 @@
+     warehouse: 1
+   };
+ 
+-  constructor() { }
++
+ }
+Index: tox-chemical-front/src/app/app.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/app.module.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/app.module.ts	(date 1558385888350)
+@@ -3,11 +3,11 @@
+ 
+ import { LoginService } from './services/login.service';
+ import { TicketService } from './services/ticket.service';
+-import { ReactiveFormsModule } from '@angular/forms';
++import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { MatFormFieldModule } from '@angular/material/form-field';
+ import { MatInputModule } from '@angular/material/input';
+-import { MatRadioModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule } from '@angular/material';
++import { MatRadioModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule , MatTableModule } from '@angular/material';
+ import { AppRoutingModule } from './app-routing.module';
+ import { AppComponent } from './app.component';
+ import { NewInOutComponent } from './gate/new-in-out/new-in-out.component';
+@@ -17,9 +17,10 @@
+ import { AuthGuard } from './guards/auth.guard';
+ import { WarehouseGuard } from './guards/warehouse.guard';
+ import { LoginComponent } from './login/login.component';
+-import { Wh1Component } from './warehouses/wh1/wh1.component';
+-import { Wh2Component } from './warehouses/wh2/wh2.component';
+ import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
++import { HttpClientModule } from '@angular/common/http';
++import {WarehouseService} from './services/warehouse.service';
++import { WarehouseComponent } from './warehouse/warehouse.component';
+ 
+ @NgModule({
+   declarations: [
+@@ -29,18 +30,19 @@
+     PageNotFoundComponent,
+     GateComponent,
+     LoginComponent,
+-    Wh1Component,
+-    Wh2Component,
+-    StorageLocationComponent
++    StorageLocationComponent,
++    WarehouseComponent
+     ],
+   imports: [
+     BrowserModule,
++    HttpClientModule,
+     AppRoutingModule,
+     ReactiveFormsModule,
+     BrowserAnimationsModule,
+-    MatRadioModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
++    FormsModule,
++    MatRadioModule, MatTableModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
+   ],
+-  providers: [LoginService, TicketService, AuthGuard, WarehouseGuard],
++  providers: [LoginService, TicketService, WarehouseService , AuthGuard , WarehouseGuard],
+   bootstrap: [AppComponent]
+ })
+ export class AppModule { }
+Index: tox-chemical-front/src/app/login/login.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/login/login.component.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/login/login.component.ts	(date 1558379377504)
+@@ -18,26 +18,24 @@
+   constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) { }
+ 
+   ngOnInit() {
+-    console.log("isLoggedIn", this.loginService.isLoggedIn);
++    console.log('isLoggedIn', this.loginService.isLoggedIn);
+   }
+ 
+-  onSubmit(){
+-    ///console.log("loginForm", this.loginForm.value);
++  onSubmit() {
++    /// console.log("loginForm", this.loginForm.value);
+     if (this.loginForm.valid) {
+       this.loginService.isLoggedIn = true;
+       this.loginService.user = this.loginForm.value.username;
+-      console.log("user", this.loginService.user);
+-      
+-      if(this.loginService.user === "gate"){
++      console.log('user', this.loginService.user);
++
++      if (this.loginService.user === 'gate') {
+         this.router.navigate(['gate']);
+-      }else if(this.loginService.user === "wh1"){
+-        this.router.navigate(['wh1']);
+-      }else if(this.loginService.user === "wh2"){
+-        this.router.navigate(['wh2']);
+-      }else{
++      } else if (this.loginService.user === 'wh1') {
++        this.router.navigate(['warehouse']);
++      }  else {
+         this.router.navigate(['login']);
+       }
+-      
++
+     }
+   }
+ 
+Index: tox-chemical-front/src/app/app-routing.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/app-routing.module.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/app-routing.module.ts	(date 1558379377624)
+@@ -7,15 +7,14 @@
+ import { AuthGuard } from './guards/auth.guard';
+ import { WarehouseGuard } from './guards/warehouse.guard';
+ import { LoginComponent } from './login/login.component';
+-import { Wh1Component } from './warehouses/wh1/wh1.component';
+-import { Wh2Component } from './warehouses/wh2/wh2.component';
+ import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
++import {WarehouseComponent} from './warehouse/warehouse.component';
+ 
+ 
+ const routes: Routes = [
+   {
+     path: '',
+-    redirectTo: 'login', 
++    redirectTo: 'login',
+     pathMatch: 'full'
+   },
+   {
+@@ -23,7 +22,7 @@
+     component: LoginComponent
+   },
+   {
+-    path: 'gate', 
++    path: 'gate',
+     component: GateComponent,
+     canActivate: [AuthGuard],
+     children: [
+@@ -42,16 +41,12 @@
+     ]
+   },
+ 
+-  { path: 'wh1', 
+-  component: Wh1Component,
+-  canActivate: [WarehouseGuard]
+-  },
+-
+-  { path: 'wh2', 
+-  component: Wh2Component,
++  { path: 'warehouse',
++  component: WarehouseComponent,
+   canActivate: [WarehouseGuard]
+   },
+-  
++
++
+   { path: '**', component: PageNotFoundComponent }
+ ];
+ 
+Index: tox-chemical-front/src/app/guards/auth.guard.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/guards/auth.guard.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/guards/auth.guard.ts	(date 1558378781351)
+@@ -7,16 +7,16 @@
+   providedIn: 'root'
+ })
+ export class AuthGuard implements CanActivate {
+-  constructor (private loginService: LoginService, private router: Router){ }
++  constructor (private loginService: LoginService, private router: Router) { }
+   canActivate(
+     next: ActivatedRouteSnapshot,
+     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+-      if(this.loginService.isLoggedIn===true){
++      if (this.loginService.isLoggedIn === true) {
+         return true;
+-      }else{
++      } else {
+         this.router.navigate(['/login']);
+         return false;
+       }
+-    
++
+   }
+ }
+Index: tox-chemical-front/package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/package.json	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/package.json	(date 1558384292688)
+@@ -22,6 +22,7 @@
+     "@angular/platform-browser": "~7.0.0",
+     "@angular/platform-browser-dynamic": "~7.0.0",
+     "@angular/router": "~7.0.0",
++    "bootstrap": "^4.3.1",
+     "core-js": "^2.5.4",
+     "rxjs": "~6.3.3",
+     "zone.js": "~0.8.26"
+Index: tox-chemical-front/src/app/warehouse/warehouse.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/warehouse/warehouse.component.ts	(date 1558390911773)
++++ tox-chemical-front/src/app/warehouse/warehouse.component.ts	(date 1558390911773)
+@@ -0,0 +1,28 @@
++import { Component, OnInit } from '@angular/core';
++import {WarehouseService} from '../services/warehouse.service';
++
++@Component({
++  selector: 'app-warehouse',
++  templateUrl: './warehouse.component.html',
++  styleUrls: ['./warehouse.component.css']
++})
++export class WarehouseComponent implements OnInit {
++ ActiveIncomeTicket = [];
++  prop: any;
++  displayedColumns: string[] = ['warehouse_id', 'type', 'quantity', 'date', 'actions'];
++  incomeAndOutcome: string;
++  constructor(private  warehouseServices: WarehouseService) { }
++
++  ngOnInit() {
++    this.getAllIncomeActiveTickets();
++  }
++
++  getAllIncomeActiveTickets() {
++        this.warehouseServices.getAll().subscribe( data => {
++         this.ActiveIncomeTicket = [] = data;
++         console.log(data);
++        } , error1 =>  {
++          console.log(error1);
++        });
++      }
++}
+Index: tox-chemical-front/src/app/guards/warehouse.guard.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tox-chemical-front/src/app/guards/warehouse.guard.ts	(revision b708690fd9367088ebc5ce10ef231ed1a86ef040)
++++ tox-chemical-front/src/app/guards/warehouse.guard.ts	(date 1558379377567)
+@@ -11,12 +11,12 @@
+   canActivate(
+     next: ActivatedRouteSnapshot,
+     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+-      if(this.loginService.isLoggedIn===true){
++      if (this.loginService.isLoggedIn === true){
+         return true;
+-      }else{
++      } else {
+         this.router.navigate(['/login']);
+         return false;
+       }
+-    
++
+   }
+ }

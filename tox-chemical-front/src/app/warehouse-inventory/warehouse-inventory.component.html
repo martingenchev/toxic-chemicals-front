@@ -1,0 +1,13 @@
+
+<mat-card>
+  <p>
+Current warehouse Inventory
+  </p>
+  <mat-card class="mb-3" *ngFor="let warehouse of WarehouseInventory">
+    <p> Warehouse NR: {{warehouse.warehouse_id}}</p>
+    <p> Warehouse capacity: {{warehouse.capacity}}</p>
+    <p> Chemical type : {{warehouse.type}}</p>
+    <p> Chemicals quantity: {{warehouse.quantity}}</p>
+
+  </mat-card>
+</mat-card>
