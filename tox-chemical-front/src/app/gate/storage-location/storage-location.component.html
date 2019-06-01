@@ -2,8 +2,9 @@
 
 <mat-card>
 <p *ngFor="let entry of entries">
-    {{ entry.quantity }}K of chemical {{ entry.type | type }} 
-    <span class="mat-body-2" style="margin: auto 20px;">{{ stepOne | inOut: false }}</span> 
-    Warehouse 1</p>
+   Quantity: {{ entry.quantity }}K of chemical {{ entry.chemicalType }}
+
+    Warehouse {{ entry.warehouse_id }}</p>
+
 <button mat-raised-button color="primary" (click)="ticketbtn()">Generate ticket</button>
 </mat-card>

@@ -8,6 +8,7 @@ import { WarehouseGuard } from './guards/warehouse.guard';
 import { LoginComponent } from './login/login.component';
 import { StorageLocationComponent } from './gate/storage-location/storage-location.component';
 import {WarehouseComponent} from './warehouse/warehouse.component';
+import {WarehouseInventoryComponent} from "./warehouse-inventory/warehouse-inventory.component";
 
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
   { path: 'warehouse',
   component: WarehouseComponent,
   canActivate: [WarehouseGuard]
+  },
+  { path: 'warehouse-inventory',
+    component: WarehouseInventoryComponent,
+    canActivate: [WarehouseGuard]
   },
 
 

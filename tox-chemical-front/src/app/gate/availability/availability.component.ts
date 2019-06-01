@@ -9,7 +9,7 @@ export interface Direction {
 }
 
 export interface Type {
-  value: number;
+  value: string;
   viewValue: string;
 }
 
@@ -30,9 +30,9 @@ export class AvailabilityComponent implements OnInit {
   ];
 
   types: Type[] = [
-    {value: 0, viewValue: 'A'},
-    {value: 1, viewValue: 'B'},
-    {value: 2, viewValue: 'C'}
+    {value: 'A', viewValue: 'A'},
+    {value: 'B', viewValue: 'B'},
+    {value: 'C', viewValue: 'C'}
   ];
 
   constructor(private router: Router, private fb: FormBuilder, private ticketService: TicketService) { }
@@ -46,7 +46,7 @@ export class AvailabilityComponent implements OnInit {
     this.chemicals = this.ticketForm.get('chemicals') as FormArray;
   }
 
-  createItem(): FormGroup{
+  createItem(): FormGroup {
     return this.fb.group({
       type: ['', Validators.required],
       quantity: ['', Validators.required]
@@ -56,18 +56,26 @@ export class AvailabilityComponent implements OnInit {
     this.chemicals.push(this.createItem());
   }
 
-  removeItem(): void{
-    this.chemicals.removeAt(this.chemicals.length-1);
+  removeItem(): void {
+    this.chemicals.removeAt(this.chemicals.length - 1);
   }
 
-  onSubmit(){
+  onSubmit() {
 
-    if (this.ticketForm.valid){
+    if (this.ticketForm.valid) {
       this.ticketService.varTicket.inOut = this.ticketForm.value.inOut;
       this.ticketService.varTicket.entries = this.chemicals.value;
-      console.log("ticket", this.ticketService);
+      console.log('ticket', this.ticketService.varTicket.entries);
+      this.ticketService.checkForSpace(this.ticketService.varTicket.entries)
+        .subscribe(response=>{
 
-      this.router.navigate(['/gate/location']);
+          this.ticketService.varTicket.entries = response;
+          console.log(this.ticketService.varTicket.entries)
+          this.router.navigate(['/gate/location']);
+        }, error=>{
+          console.log('Error on check space', error)
+        });
+
     }
   }
 
