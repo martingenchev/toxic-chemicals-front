@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
     <span>{{ title }}</span>
     <button mat-button (click)="logout()">Log out</button>
-  <a routerLink="/warehouse-inventory"> Current inventory </a>
-  <a routerLink="/warehouse"> Incoming and Outgoing goods</a>
+  <a routerLink="/warehouse-inventory" *ngIf="loginService.isLoggedIn"> Current inventory </a>
+  <a routerLink="/warehouse" *ngIf="loginService.isLoggedIn" > Incoming and Outgoing goods</a>
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
     <span>{{ this.loginService.user }}</span>
