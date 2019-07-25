@@ -3,6 +3,7 @@ import {WarehouseService} from '../services/warehouse.service';
 import {MatTableDataSource, MatSortModule } from '@angular/material';
 import { ticketDetails} from '../models/ticket-details';
 import {FormControl} from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-warehouse',
@@ -11,7 +12,7 @@ import {FormControl} from '@angular/forms';
 })
 export class WarehouseComponent implements OnInit {
 
-  constructor(private  warehouseServices: WarehouseService
+  constructor(private  warehouseServices: WarehouseService , private router: Router
   ) {  this.dataSources.filterPredicate = this.tableFilter(); }
 
   displayedColumns: string[] = ['warehouse_id', 'type', 'quantity', 'date', 'actions'];
@@ -58,6 +59,7 @@ export class WarehouseComponent implements OnInit {
     this.warehouseServices.AddItemsToInventory(ticket).subscribe(response => {
       console.log('si', response );
       // TODO Add a toast service for feedback
+      this.router.navigate(['/warehouse-inventory']);
     }, error => {
       console.log('error' , error);
     });
