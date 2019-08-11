@@ -1,10 +1,20 @@
 <h1 class="mat-headline">New &#8250; {{ stepOne | inOut: true }} &#8250; Storage Location</h1>
 
 <mat-card>
-<p *ngFor="let entry of entries">
-   Quantity: {{ entry.quantity }}K of chemical {{ entry.chemicalType }}
+  <p *ngFor="let entry of entries">
+    Quantity: {{ entry.quantity }}K of chemical {{ entry.chemicalType }}
 
     Warehouse {{ entry.warehouse_id }}</p>
 
-<button mat-raised-button color="primary" (click)="ticketbtn()">Generate ticket</button>
+  <button mat-raised-button color="primary" (click)="ticketbtn()">Generate ticket</button>
 </mat-card>
+
+<a
+  class="list-group-item"
+  style="cursor: pointer"
+  *ngFor="let entry of (tickets | async).tickets;"
+>
+  TYPE: {{ entry.chemicalType }}
+  Quantity :({{ entry.quantity }})
+  Warehouse: {{entry.warehouse_id}}
+</a>

@@ -17,10 +17,19 @@ export class AppPage {
     return element(by.css('[formControlName=' + name + ']'));
   }
 
-  gateLogin(){
+  gateLogin(username: string, password: string) {
     this.navigateTo();
-    this.getByFormControlName('username').sendKeys('gate');
-    this.getByFormControlName('password').sendKeys('whatever');
+    this.getByFormControlName('username').sendKeys(username);
+    this.getByFormControlName('password').sendKeys(password);
     this.btnsubmit();
+  }
+  // process for print the ticket
+  printTicket() {
+    this.gateLogin('gate' , 'pass');
+    element.all(by.tagName('mat-radio-button')).get(1).click();
+    element.all(by.tagName('mat-select')).click();
+    element.all(by.tagName('mat-option')).get(1).click();
+    this.getByFormControlName('quantity').sendKeys(3);
+    element.all(by.tagName('button')).get(3).click();
   }
 }

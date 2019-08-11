@@ -3,8 +3,9 @@ export class Ticket {
     entries: Entry[];
 }
 
-export class Entry{
-    type: string;
-    quantity: number;
-    warehouse_id: number;
+export class Entry {
+  constructor(public  chemicalType: string, public quantity: number ) {}
+}
+export class GeneratedTicket {
+  constructor(public  chemicalType: string, public quantity: number , public warehouse_id: number) {}
 }

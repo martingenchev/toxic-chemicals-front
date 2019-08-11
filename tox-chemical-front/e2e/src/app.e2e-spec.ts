@@ -9,32 +9,34 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-it('should go to gate', () => {
-  page.gateLogin();
+it('go to gate', () => {
+  page.gateLogin('gate' , 'pass');
   expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate');
 });
 
-it('should display New as h1', () => {
-  page.gateLogin();
+it('display New as h1', () => {
+  page.gateLogin('gate' , 'pass');
   expect(page.getParagraphText()).toEqual('New');
  });
 
-it('should make a ticket', () => {
-  page.gateLogin();
-  // browser.sleep(1000);
-  element.all(by.tagName('mat-radio-button')).get(1).click();
-  // browser.sleep(1000);
-  element.all(by.tagName('mat-select')).click();
-  // browser.sleep(1000);
-  element.all(by.tagName('mat-option')).get(1).click();
-  // browser.sleep(1000);
-  page.getByFormControlName('quantity').sendKeys(89);
-  // browser.sleep(1000);
-  element.all(by.tagName('button')).get(3).click();
+it('print a ticket', () => {
+  page.printTicket();
   // browser.sleep(1000);
   expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate/location');
 });
 
+it('generate ticket', () => {
+  page.printTicket();
+  element.all(by.tagName('button')).get(1).click();
+  expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'/gate');
+  });
+
+it('approve ticket', () => {
+  page.gateLogin('wh1', 'secured');
+  element(by.tagName('mat-radio-button')).click();
+  element.all(by.css('.btn-dark')).get(1).click();
+  expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/warehouse-inventory');
+});
 afterEach(async () => {
   // Assert that there are no errors emitted from the browser
   const logs = await browser.manage().logs().get(logging.Type.BROWSER);
