@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {StoreModule} from "@ngrx/store";
 import { LoginService } from './services/login.service';
 import { TicketService } from './services/ticket.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -23,6 +23,8 @@ import { WarehouseComponent } from './warehouse/warehouse.component';
 import { TypePipe } from './pipes/type.pipe';
 import { InOutPipe } from './pipes/in-out.pipe';
 import { WarehouseInventoryComponent } from './warehouse-inventory/warehouse-inventory.component';
+import {availabilityReducer} from './gate/availability/store/availability.reducer';
+import {WarehouseReducer} from "./gate/storage-location/store/warehouse.reducer";
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { WarehouseInventoryComponent } from './warehouse-inventory/warehouse-inv
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
+    StoreModule.forRoot({availabilityList: availabilityReducer, warehouseList: WarehouseReducer}),
     MatRadioModule, MatTableModule, MatFormFieldModule, MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatGridListModule, MatNativeDateModule, MatDatepickerModule, MatSelectModule
   ],
   providers: [LoginService, TicketService, WarehouseService , AuthGuard , WarehouseGuard],

@@ -2,13 +2,13 @@
 
 <mat-card>
   <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
-  
+
       <div class="radiobtns">
           <mat-radio-group formControlName="inOut">
               <mat-radio-button *ngFor="let direction of directions" [value]="direction.value">
                   {{direction.viewValue}}
               </mat-radio-button>
-          </mat-radio-group> 
+          </mat-radio-group>
   </div>
 
     <div formArrayName="chemicals"
@@ -35,7 +35,19 @@
       <button type="button" mat-mini-fab color="primary" (click)="addItem()">+</button>
       <button type="button" mat-mini-fab color="primary" (click)="removeItem()">-</button>
     </div>
-  
+
     <button mat-raised-button color="primary">Check Availability</button>
   </form>
+
+
+
 </mat-card>
+<a
+  class="list-group-item"
+  style="cursor: pointer"
+  *ngFor="let entry of (entries | async).pending;"
+>
+
+  {{ entry.type }} ({{ entry.quantity }}) {{entry.warehouse_id}}
+
+</a>

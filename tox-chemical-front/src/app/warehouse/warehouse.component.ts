@@ -3,6 +3,12 @@ import {WarehouseService} from '../services/warehouse.service';
 import {MatTableDataSource, MatSortModule } from '@angular/material';
 import { ticketDetails} from '../models/ticket-details';
 import {FormControl} from '@angular/forms';
+import {Router} from "@angular/router";
+import {Observable} from "rxjs";
+import {GeneratedTicket} from "../entities/ticket";
+import {Store} from '@ngrx/store';
+import * as AvailabilityActions from '../gate/availability/store/availavility.actions';
+
 
 @Component({
   selector: 'app-warehouse',
@@ -11,16 +17,22 @@ import {FormControl} from '@angular/forms';
 })
 export class WarehouseComponent implements OnInit {
 
-  constructor(private  warehouseServices: WarehouseService
+  constructor(
+    private  warehouseServices: WarehouseService ,
+    private router: Router,
+    private store: Store<{warehouseList: {tickets: GeneratedTicket[]}}>
   ) {  this.dataSources.filterPredicate = this.tableFilter(); }
 
   displayedColumns: string[] = ['warehouse_id', 'type', 'quantity', 'date', 'actions'];
   incomeAndOutcome: string[] = ['warehouse_id', 'type', 'quantity', 'date', 'actions'];
   dataSources = new MatTableDataSource() ;
   filteredID;
+  //observable for the reducer
+  tickets: Observable<{tickets: GeneratedTicket[]}>;
 
   idFilter = new FormControl();
   ngOnInit() {
+    this.tickets = this.store.select('warehouseList');
     this.getAllIncomeActiveTickets();
     this.idFilter.valueChanges.subscribe(id => {
       this.filteredID = id;
@@ -39,7 +51,7 @@ export class WarehouseComponent implements OnInit {
       this.dataSources.data = this.warehouseServices.incomeTickets.tickets;
 
      // this.dataSources = new  MatTableDataSource(this.warehouseServices.incomeTickets.tickets);
-      console.log('ticket details', ticketDetails);
+      console.log('ticket details', this.dataSources.data );
     } , error1 =>  {
       console.log(error1);
     });
@@ -57,7 +69,11 @@ export class WarehouseComponent implements OnInit {
     console.log(ticket);
     this.warehouseServices.AddItemsToInventory(ticket).subscribe(response => {
       console.log('si', response );
+
+      let deleteTicketRedux = this.dataSources.data.indexOf(ticket);
+      this.store.dispatch(new AvailabilityActions.DeleteTicket(deleteTicketRedux));
       // TODO Add a toast service for feedback
+      this.router.navigate(['/warehouse-inventory']);
     }, error => {
       console.log('error' , error);
     });
